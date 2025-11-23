@@ -13,7 +13,7 @@ export default class GlobalContext {
     this.uiContext = context;
   }
 
-  public getContext() {
+  public getAppContext() {
     return this.uiContext;
   }
 }

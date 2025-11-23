@@ -20,7 +20,7 @@ export default class PermissionHandler {
 
   static getInstance(): PermissionHandler {
     if (!PermissionHandler.instance) {
-      let context = GlobalContext.getInstance().getContext();
+      let context = GlobalContext.getInstance().getAppContext();
       PermissionHandler.instance = new PermissionHandler(context);
     }
 
@@ -70,7 +70,7 @@ export default class PermissionHandler {
       ).then((data) => {
         if (data.authResults[0] === -1 || data.authResults[1] === -1) {
           if (data.dialogShownResults && (data.dialogShownResults[0] || data.dialogShownResults[1])) {
-            console.log('Permissions granted')
+            console.info('Permissions granted')
           } else {
             this.openPermissionsSetting();
             return;
@@ -95,7 +95,7 @@ export default class PermissionHandler {
       CALENDAR_PERMISSIONS
     )
       .then((data: Array<abilityAccessCtrl.GrantStatus>) => {
-        console.log('Permission Granted')
+        console.info('Permission Granted')
       })
       .catch((err: BusinessError) => {
         hilog.error(0x0000, 'Index', 'data:' + JSON.stringify(err));

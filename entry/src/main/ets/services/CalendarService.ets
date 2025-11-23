@@ -16,7 +16,7 @@ export default class CalendarService {
 
   static getInstance(): CalendarService {
     if (!CalendarService.instance) {
-      const context = GlobalContext.getInstance().getContext();
+      const context = GlobalContext.getInstance().getAppContext();
       let manager = calendarManager.getCalendarManager(context);
       CalendarService.instance = new CalendarService(manager);
     }
