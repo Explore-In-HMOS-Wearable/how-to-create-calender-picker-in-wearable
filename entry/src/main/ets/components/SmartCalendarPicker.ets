@@ -25,8 +25,8 @@ export default struct SmartCalendarPicker {
       primaryTitle: 'Select Year',
       contentBuilder: () => {
         this.buildContent();
-      },
-    }),
+      }
+    })
   });
 
   aboutToAppear(): void {
@@ -62,7 +62,7 @@ export default struct SmartCalendarPicker {
         },
         onClose: () => {
           this.dialogController.close();
-        },
+        }
       })
     }
   }
@@ -88,14 +88,14 @@ export default struct SmartCalendarPicker {
           .width('100%')
           .height('100%')
           .fontColor(monthDay.isNotCurrent ? Color.Gray : (
-            monthDay.dayIndex == 6 || monthDay.dayIndex == 0 ? Color.Red : Color.White
+            monthDay.dayIndex === 6 || monthDay.dayIndex === 0 ? Color.Red : Color.White
           ))
 
           .borderWidth({
             top: 0,
             right: 0,
             bottom: monthDay.hasEvents ? 4 : 0,
-            left: 0,
+            left: 0
           })
           .borderColor(Color.Orange)
           .textAlign(TextAlign.Center)
@@ -145,10 +145,10 @@ export default struct SmartCalendarPicker {
             (day: string, index: number) => {
               GridItem() {
                 Text(day)
-                  .fontColor(index == WEEK_DAYS.length - 1 || index == 0 ? Color.Red : Color.White)
+                  .fontColor(index === WEEK_DAYS.length - 1 || index === 0 ? Color.Red : Color.White)
               }
             },
-            (day: string) => day
+            (day: string, index: number) => day
           )
 
           LazyForEach(
@@ -167,7 +167,7 @@ export default struct SmartCalendarPicker {
     }
     .padding({
       left: this.context.getWindowWidthBreakpoint() / 4.5,
-      top: 0,
+      top: 0
     })
     .justifyContent(FlexAlign.Center)
     .alignItems(HorizontalAlign.Center)

@@ -1,7 +1,7 @@
 export const MONTHS = [
   'Jan', 'Feb', 'Mar', 'Apr',
   'May', 'Jun', 'Jul', 'Aug',
-  'Sep', 'Nov', 'Oct', 'Dec',
+  'Sep', 'Nov', 'Oct', 'Dec'
 ];
 
 export const WEEK_DAYS = [

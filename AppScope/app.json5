@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.hmosdemos.calendarpicker",
+    "bundleName": "com.hmosdemos.wearable.how_to_create_calendarpicker",
     "vendor": "hmosdemos",
     "versionCode": 1000000,
     "versionName": "1.0.0",

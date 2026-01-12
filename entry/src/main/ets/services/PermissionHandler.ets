@@ -7,7 +7,7 @@ const CALENDAR_PERMISSIONS: Permissions[] = [
   'ohos.permission.READ_CALENDAR',
   'ohos.permission.READ_WHOLE_CALENDAR',
   'ohos.permission.WRITE_CALENDAR',
-  'ohos.permission.WRITE_WHOLE_CALENDAR',
+  'ohos.permission.WRITE_WHOLE_CALENDAR'
 ]
 
 export default class PermissionHandler {
@@ -80,10 +80,10 @@ export default class PermissionHandler {
           return;
         }
       }).catch((err: Error) => {
-        hilog.error(0x0000, 'Index', 'requestPermissionsFromUser err:' + JSON.stringify(err));
+        hilog.error(0x0000, 'Index', `requestPermissionsFromUser err: ${JSON.stringify(err)}`);
       });
     } catch (err) {
-      hilog.error(0x0000, 'Index', 'requestPermissionsFromUser err:' + JSON.stringify(err));
+      hilog.error(0x0000, 'Index', `requestPermissionsFromUser err: ${JSON.stringify(err)}`);
     }
   }
 
@@ -98,7 +98,7 @@ export default class PermissionHandler {
         console.info('Permission Granted')
       })
       .catch((err: BusinessError) => {
-        hilog.error(0x0000, 'Index', 'data:' + JSON.stringify(err));
+        hilog.error(0x0000, 'Index', `data: ${JSON.stringify(err)}`);
       });
   }
 }

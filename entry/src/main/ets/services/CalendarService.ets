@@ -72,7 +72,7 @@ export default class CalendarService {
         dayIndex: dayjs(date).day(),
         isNotCurrent,
         date: dayjs(date).toDate(),
-        hasEvents,
+        hasEvents
       })
     }
 
